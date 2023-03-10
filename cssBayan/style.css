@@ -1,42 +1,80 @@
+body{
+    background-color: rgb(252, 253, 241, 0.5);
+}
 .wrapper {
     max-width: 50%;
     margin: 0 auto;
 }
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+}
 .accordion {
     flex-direction: column;
     display: flex;
+    cursor: pointer;
+    color:rgb(97, 40, 83);
 }
-.accordion-content {
+.accordion__content {
     text-align: center;
 }
-.accordion-content img {
-    max-width: 50%;
+.accordion__content img {
+    max-width: 40%;
 }
 .accordion input[type="checkbox"] {
-    display: none;
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
   }
   
-  .accordion label {
-    display: block;
+  .accordion__label {
     cursor: pointer;
+    color: blue;
+    font-size: 2rem;
+    border-top: 0.02rem solid gray;
+    display: flex;
+    justify-content: space-between;
+
   }
-  
-  .accordion .content {
-    max-height: 0;
+ .accordion__open  {
+    width: 6%;
+    opacity: 0;
+    background-image: url('assets/img/open.png');
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+  }
+  .accordion__content {
+   
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    opacity: 0;
+    transition: all 0.35s ease-out;
+    max-height: 0;
   }
   
-  .accordion input[type="checkbox"]:checked ~ .content {
+  .accordion input[type="checkbox"]:checked + .accordion__label + .accordion__content {
+    opacity: 1;
     max-height: 100%;
-    transition: max-height 0.35s ease-in;
+    transition: all 0.35s ease-in;
+  }
+  .accordion input[type="checkbox"]:checked + .accordion__label{
+    color: rgb(8, 8, 8);
   }
   @media screen and (min-width: 1000px) {
-    .accordion:hover {
-        color: rgb(206, 4, 4);
+    .accordion:hover  .accordion__label {
+        color: rgb(8, 8, 8);
       }
-      
-      .accordion input[type="checkbox"]:checked + label {
-        color: rgb(206, 4, 4);
+      .accordion:hover  .accordion__label .accordion__open {
+        opacity: 1;
       }
+      .accordion__label:hover + .accordion__content {
+        opacity: 1;
+        max-height: 100%;
+        transition: all 0.35s ease-in;
+      }
+      .accordion__content:hover {
+        opacity: 1;
+        max-height: 100%;
+        transition: all 0.35s ease-in;
+      }
+
   }

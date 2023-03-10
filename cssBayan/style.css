@@ -1,0 +1,42 @@
+.wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.accordion {
+    flex-direction: column;
+    display: flex;
+}
+.accordion-content {
+    text-align: center;
+}
+.accordion-content img {
+    max-width: 50%;
+}
+.accordion input[type="checkbox"] {
+    display: none;
+  }
+  
+  .accordion label {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .accordion .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .accordion input[type="checkbox"]:checked ~ .content {
+    max-height: 100%;
+    transition: max-height 0.35s ease-in;
+  }
+  @media screen and (min-width: 1000px) {
+    .accordion:hover {
+        color: rgb(206, 4, 4);
+      }
+      
+      .accordion input[type="checkbox"]:checked + label {
+        color: rgb(206, 4, 4);
+      }
+  }

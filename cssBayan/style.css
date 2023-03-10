@@ -1,4 +1,5 @@
-body{
+
+  body{
     background-color: rgb(252, 253, 241, 0.5);
 }
 .wrapper {
@@ -15,19 +16,7 @@ body{
     cursor: pointer;
     color:rgb(97, 40, 83);
 }
-.accordion__content {
-    text-align: center;
-}
-.accordion__content img {
-    max-width: 40%;
-}
-.accordion input[type="checkbox"] {
-    opacity: 0;
-    height: 0;
-    visibility: hidden;
-  }
-  
-  .accordion__label {
+.accordion__header {
     cursor: pointer;
     color: blue;
     font-size: 2rem;
@@ -36,7 +25,12 @@ body{
     justify-content: space-between;
 
   }
- .accordion__open  {
+  input[type="radio" i]{
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  .accordion__open  {
     width: 6%;
     opacity: 0;
     background-image: url('assets/img/open.png');
@@ -44,37 +38,46 @@ body{
     background-repeat: no-repeat;
   }
   .accordion__content {
-   
     overflow: hidden;
     opacity: 0;
-    transition: all 0.35s ease-out;
+    transition: all 1s ease-in;
     max-height: 0;
+    cursor: pointer;
   }
-  
-  .accordion input[type="checkbox"]:checked + .accordion__label + .accordion__content {
+  .accordion__content {
+    text-align: center;
+}
+.accordion__content img {
+    max-width: 40%;
+}
+  .accordion input:checked ~ .accordion__content {
     opacity: 1;
     max-height: 100%;
-    transition: all 0.35s ease-in;
+    transition: all 1s ease-in;
   }
-  .accordion input[type="checkbox"]:checked + .accordion__label{
+  .accordion input:checked  ~ .accordion__header {
     color: rgb(8, 8, 8);
   }
+  .accordion input:checked  + .accordion__header .accordion__open {
+    background-image: url('assets/img/close.svg');
+  }
+
   @media screen and (min-width: 1000px) {
-    .accordion:hover  .accordion__label {
+    .accordion input:hover  ~ .accordion__header {
         color: rgb(8, 8, 8);
       }
-      .accordion:hover  .accordion__label .accordion__open {
+      .accordion:hover  .accordion__header .accordion__open {
         opacity: 1;
       }
-      .accordion__label:hover + .accordion__content {
-        opacity: 1;
-        max-height: 100%;
-        transition: all 0.35s ease-in;
-      }
-      .accordion__content:hover {
-        opacity: 1;
-        max-height: 100%;
-        transition: all 0.35s ease-in;
+      .accordion input:hover  + .accordion__header .accordion__open{
+        background-image: url('assets/img/close.svg');
       }
 
+      .accordion input:hover ~ .accordion__content {
+        opacity: 1;
+        max-height: 100%;
+        transition: all 1s ease-in;
+      } 
+
   }
+ 

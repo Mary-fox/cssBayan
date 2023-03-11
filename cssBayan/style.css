@@ -52,7 +52,7 @@ input[type="radio" i]{
 }
 .accordion input:checked ~ .accordion__content {
     opacity: 1;
-    max-height: 150%;
+    max-height: 100vh;
     transition: all 1s ease-in;
 }
 .accordion input:checked  ~ .accordion__header {
@@ -89,7 +89,7 @@ input[type="radio" i]{
     }
     .accordion input:hover ~ .accordion__content {
         opacity: 1;
-        max-height: 150%;
+        max-height: 100vh;
         transition: all 1s ease-in;
     } 
   }

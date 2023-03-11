@@ -1,5 +1,5 @@
 
-  body{
+body{
     background-color: rgb(252, 253, 241, 0.5);
 }
 .wrapper {
@@ -35,6 +35,7 @@ input[type="radio" i]{
     background-image: url('assets/img/open.png');
     background-size: 1.5rem;
     background-repeat: no-repeat;
+    transition: all 0.5s ease-in;
 }
 .accordion__content {
     overflow: hidden;
@@ -62,12 +63,14 @@ input[type="radio" i]{
 }
 .accordion__item:active .accordion .accordion__header .accordion__open  {
     background-image: url('assets/img/close2.svg');
+    transition: all 0.5s ease-in;
 }
 .accordion__item:active .accordion .accordion__content img {
     filter: grayscale(50%);
 }
 .accordion input:checked  + .accordion__header .accordion__open {
     background-image: url('assets/img/close.svg');
+    transition: all 0.5s ease-in;
     /* opacity: 1; */
 }
 .accordion__item:checked .accordion .accordion__header .accordion__open  {
@@ -82,6 +85,7 @@ input[type="radio" i]{
     }
     .accordion input:hover  + .accordion__header .accordion__open{
         background-image: url('assets/img/close.svg');
+        transition: all 0.5s ease-in;
     }
     .accordion input:hover ~ .accordion__content {
         opacity: 1;

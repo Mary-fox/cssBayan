@@ -76,7 +76,7 @@ input[type="radio" i]{
 .accordion__item:checked .accordion .accordion__header .accordion__open  {
     opacity: 1;
 }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1000px) and (pointer: fine) {
     .accordion input:hover  ~ .accordion__header {
         color: rgb(8, 8, 8);
     }

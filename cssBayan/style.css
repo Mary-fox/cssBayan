@@ -18,7 +18,7 @@
 }
 .accordion__header {
     cursor: pointer;
-    color: rgb(57, 57, 104);
+    color: rgb(162, 162, 241);
     font-size: 2rem;
     border-top: 0.02rem solid gray;
     display: flex;

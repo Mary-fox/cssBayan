@@ -18,12 +18,11 @@
 }
 .accordion__header {
     cursor: pointer;
-    color: blue;
+    color: rgb(57, 57, 104);
     font-size: 2rem;
     border-top: 0.02rem solid gray;
     display: flex;
     justify-content: space-between;
-
 }
 input[type="radio" i]{
     opacity: 0;
@@ -55,7 +54,6 @@ input[type="radio" i]{
     max-height: 150%;
     transition: all 1s ease-in;
 }
-
 .accordion input:checked  ~ .accordion__header {
     color: rgb(8, 8, 8);
 }
@@ -70,8 +68,11 @@ input[type="radio" i]{
 }
 .accordion input:checked  + .accordion__header .accordion__open {
     background-image: url('assets/img/close.svg');
+    opacity: 1;
 }
-
+.accordion__item:checked .accordion .accordion__header .accordion__open  {
+    opacity: 1;
+}
   @media screen and (min-width: 1000px) {
     .accordion input:hover  ~ .accordion__header {
         color: rgb(8, 8, 8);
@@ -88,4 +89,39 @@ input[type="radio" i]{
         transition: all 1s ease-in;
     } 
   }
- 
+  @media screen and (min-width: 600px) and (max-width: 999px) {
+    .wrapper {
+        max-width: 70%;
+    }
+    .accordion__open  {
+        width: 6%;
+        opacity: 1;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .accordion__header {
+        font-size: 1.5rem;
+    }
+    .accordion__content img {
+        max-width: 50%;
+    }
+  }
+  @media screen and (min-width: 300px) and (max-width: 599px){
+    .wrapper {
+        max-width: 90%;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .accordion__header {
+        font-size: 1rem;
+    }
+    .accordion__open  {
+        width: 8%;
+        background-size: 1rem;
+    }
+    .accordion__content img {
+        max-width: 60%;
+    }
+  }

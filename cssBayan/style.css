@@ -52,11 +52,21 @@ input[type="radio" i]{
 }
 .accordion input:checked ~ .accordion__content {
     opacity: 1;
-    max-height: 100%;
+    max-height: 150%;
     transition: all 1s ease-in;
 }
+
 .accordion input:checked  ~ .accordion__header {
     color: rgb(8, 8, 8);
+}
+.accordion__item:active .accordion .accordion__header {
+    color: rgb(172, 139, 139);
+}
+.accordion__item:active .accordion .accordion__header .accordion__open  {
+    background-image: url('assets/img/close2.svg');
+}
+.accordion__item:active .accordion .accordion__content img {
+    filter: grayscale(50%);
 }
 .accordion input:checked  + .accordion__header .accordion__open {
     background-image: url('assets/img/close.svg');
@@ -66,7 +76,7 @@ input[type="radio" i]{
     .accordion input:hover  ~ .accordion__header {
         color: rgb(8, 8, 8);
     }
-    .accordion:hover  .accordion__header .accordion__open {
+    .accordion__conteiner:hover  .accordion__header .accordion__open {
         opacity: 1;
     }
     .accordion input:hover  + .accordion__header .accordion__open{
@@ -74,7 +84,7 @@ input[type="radio" i]{
     }
     .accordion input:hover ~ .accordion__content {
         opacity: 1;
-        max-height: 100%;
+        max-height: 150%;
         transition: all 1s ease-in;
     } 
   }

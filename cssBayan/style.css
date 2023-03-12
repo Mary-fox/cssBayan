@@ -71,7 +71,7 @@ input[type="radio" i]{
     transition: all 0.5s ease-in;
 }
 .accordion__item:active .accordion .accordion__content img {
-    filter: grayscale(50%);
+    opacity: 0.4;
 }
 .accordion input:checked  + .accordion__header .accordion__open {
     background-image: url('assets/img/close.svg');

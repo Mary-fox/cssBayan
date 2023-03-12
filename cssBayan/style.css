@@ -40,7 +40,7 @@ input[type="radio" i]{
 .accordion__content {
     overflow: hidden;
     opacity: 0;
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
     max-height: 0;
     cursor: pointer;
 }
@@ -48,12 +48,13 @@ input[type="radio" i]{
     text-align: center;
 }
 .accordion__content img {
-    max-width: 40%;
+    max-width: 0;
+    transition: all 0.5s ease-in;
 }
 .accordion input:checked ~ .accordion__content {
     opacity: 1;
-    max-height: 100vh;
-    transition: all 1s ease-in;
+    max-height: 100%;
+    transition: all 0.5s ease-in;
 }
 .accordion input:checked  ~ .accordion__header {
     color: rgb(8, 8, 8);
@@ -65,18 +66,21 @@ input[type="radio" i]{
     background-image: url('assets/img/close2.svg');
     transition: all 0.5s ease-in;
 }
+.accordion input:checked ~ .accordion__content img {
+    max-width: 40%;
+    transition: all 0.5s ease-in;
+}
 .accordion__item:active .accordion .accordion__content img {
     filter: grayscale(50%);
 }
 .accordion input:checked  + .accordion__header .accordion__open {
     background-image: url('assets/img/close.svg');
     transition: all 0.5s ease-in;
-    /* opacity: 1; */
 }
 .accordion__item:checked .accordion .accordion__header .accordion__open  {
     opacity: 1;
 }
-  @media screen and (min-width: 1000px) and (hover:hover) {
+@media (hover: hover) and (pointer: fine) {
     .accordion input:hover  ~ .accordion__header {
         color: rgb(8, 8, 8);
     }
@@ -89,9 +93,13 @@ input[type="radio" i]{
     }
     .accordion input:hover ~ .accordion__content {
         opacity: 1;
-        max-height: 100vh;
-        transition: all 1s ease-in;
+        max-height: 100%;
+        transition: all 0.5s ease-in;
     } 
+    .accordion input:hover ~ .accordion__content img{
+        max-width: 40%;
+        transition: all 0.3s ease-in;
+    }
   }
   @media screen and (min-width: 600px) and (max-width: 999px) {
     .wrapper {
@@ -107,7 +115,7 @@ input[type="radio" i]{
     .accordion__header {
         font-size: 1.5rem;
     }
-    .accordion__content img {
+    .accordion input:checked ~ .accordion__content img {
         max-width: 50%;
     }
   }
@@ -126,7 +134,7 @@ input[type="radio" i]{
         background-size: 1rem;
         opacity: 1;
     }
-    .accordion__content img {
+    .accordion input:checked ~ .accordion__content img {
         max-width: 60%;
     }
   }

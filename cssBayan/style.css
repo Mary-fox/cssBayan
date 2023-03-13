@@ -81,7 +81,7 @@ input[type="radio" i]{
     opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
-    .accordion input:hover  ~ .accordion__header {
+    .accordion__conteiner:hover  .accordion__header {
         color: rgb(8, 8, 8);
     }
     .accordion__conteiner:hover  .accordion__header .accordion__open {
